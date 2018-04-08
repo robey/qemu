@@ -24,6 +24,7 @@
 #include "hw/sd/sdhci.h"
 #include "hw/sd/bcm2835_sdhost.h"
 #include "hw/gpio/bcm2835_gpio.h"
+#include "hw/timer/bcm2835_st.h"
 
 #define TYPE_BCM2835_PERIPHERALS "bcm2835-peripherals"
 #define BCM2835_PERIPHERALS(obj) \
@@ -47,6 +48,7 @@ typedef struct BCM2835PeripheralState {
     BCM2835RngState rng;
     BCM2835MboxState mboxes;
     SDHCIState sdhci;
+    BCM2835StState st;
     BCM2835SDHostState sdhost;
     BCM2835GpioState gpio;
 } BCM2835PeripheralState;
